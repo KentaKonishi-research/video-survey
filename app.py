@@ -47,7 +47,7 @@ if 'initialized' not in st.session_state:
     st.session_state.initialized = True
 
 # 画面設定
-st.set_page_config(page_title="動画評価調査", layout="centered")
+st.set_page_config(page_title="沈黙の評価", layout="centered")
 
 # 全ての動画が終わったか判定
 if st.session_state.current_idx >= len(st.session_state.video_order):
@@ -74,7 +74,7 @@ else:
     progress = st.session_state.current_idx + 1
     total = len(st.session_state.video_order)
 
-    st.title(f"動画評価 ({progress} / {total})")
+    st.title(f"気まずさの評価 ({progress} / {total})")
     st.write("以下の動画を視聴し、評価を選択してください。")
 
     # --- 3. YouTubeの表示 ---
@@ -85,7 +85,7 @@ else:
     # --- 4. 評価フォーム ---
     # ラジオボタンの選択肢（keyを動画ごとに変えることでリセットされる）
     score = st.radio(
-        "この動画の評価を6段階で選択してください（1=全くあてはまらない、6=非常にあてはまる）",
+        "この動画の評価を6段階で選択してください（1=気まずくない、6=気まずい）",
         options=[1, 2, 3, 4, 5, 6],
         horizontal=True,
         index=None,
