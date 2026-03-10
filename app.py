@@ -75,7 +75,7 @@ else:
     total = len(st.session_state.video_order)
 
     st.title(f"気まずさの評価 ({progress} / {total})")
-    st.write("以下の動画を視聴し、評価を選択してください。")
+    st.write("以下の動画を視聴し、動画の最後の部分にある沈黙について、評価を選択してください。")
 
     # --- 3. YouTubeの表示 ---
     st.video(current_item["url"])
@@ -85,7 +85,7 @@ else:
     # --- 4. 評価フォーム ---
     # ラジオボタンの選択肢（keyを動画ごとに変えることでリセットされる）
     score = st.radio(
-        "この動画の評価を6段階で選択してください（1=気まずくない、6=気まずい）",
+        "動画の最終部分の沈黙の評価を6段階で選択してください（1=気まずくない、6=気まずい）",
         options=[1, 2, 3, 4, 5, 6],
         horizontal=True,
         index=None,
